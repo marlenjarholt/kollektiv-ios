@@ -1,0 +1,515 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F15261FB2323E053005E393F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15261FA2323E053005E393F /* AppDelegate.swift */; };
+		F15261FD2323E053005E393F /* FrontPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15261FC2323E053005E393F /* FrontPageViewController.swift */; };
+		F15262022323E056005E393F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F15262012323E056005E393F /* Assets.xcassets */; };
+		F15262102323E056005E393F /* kollektiv_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F152620F2323E056005E393F /* kollektiv_iosTests.swift */; };
+		F152621B2323EC63005E393F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F152621A2323EC63005E393F /* LaunchScreen.storyboard */; };
+		F152621E2323ED79005E393F /* Collective.swift in Sources */ = {isa = PBXBuildFile; fileRef = F152621D2323ED79005E393F /* Collective.swift */; };
+		F15262212323EDFE005E393F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15262202323EDFE005E393F /* Item.swift */; };
+		F15262242323F07B005E393F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15262232323F07B005E393F /* User.swift */; };
+		F152622A2323FB61005E393F /* ShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15262292323FB61005E393F /* ShoppingListViewController.swift */; };
+		F152622C2323FE5A005E393F /* InFridgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F152622B2323FE5A005E393F /* InFridgeViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F152620C2323E056005E393F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F15261EF2323E053005E393F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F15261F62323E053005E393F;
+			remoteInfo = "kollektiv-ios";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F15261F72323E053005E393F /* kollektiv-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "kollektiv-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F15261FA2323E053005E393F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F15261FC2323E053005E393F /* FrontPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPageViewController.swift; sourceTree = "<group>"; };
+		F15262012323E056005E393F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F15262062323E056005E393F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F152620B2323E056005E393F /* kollektiv-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "kollektiv-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F152620F2323E056005E393F /* kollektiv_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kollektiv_iosTests.swift; sourceTree = "<group>"; };
+		F15262112323E056005E393F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F152621A2323EC63005E393F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F152621D2323ED79005E393F /* Collective.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collective.swift; sourceTree = "<group>"; };
+		F15262202323EDFE005E393F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		F15262232323F07B005E393F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F15262292323FB61005E393F /* ShoppingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListViewController.swift; sourceTree = "<group>"; };
+		F152622B2323FE5A005E393F /* InFridgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InFridgeViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F15261F42323E053005E393F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F15262082323E056005E393F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F15261EE2323E053005E393F = {
+			isa = PBXGroup;
+			children = (
+				F15261F92323E053005E393F /* kollektiv-ios */,
+				F152620E2323E056005E393F /* kollektiv-iosTests */,
+				F15261F82323E053005E393F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F15261F82323E053005E393F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F15261F72323E053005E393F /* kollektiv-ios.app */,
+				F152620B2323E056005E393F /* kollektiv-iosTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F15261F92323E053005E393F /* kollektiv-ios */ = {
+			isa = PBXGroup;
+			children = (
+				F15262272323FA4C005E393F /* in-fridge */,
+				F15262262323FA3D005E393F /* shopping-list */,
+				F15262252323FA29005E393F /* fornt-page */,
+				F15262222323F06E005E393F /* user */,
+				F152621F2323EDE6005E393F /* item */,
+				F152621C2323ED22005E393F /* collective */,
+				F152621A2323EC63005E393F /* LaunchScreen.storyboard */,
+				F15261FA2323E053005E393F /* AppDelegate.swift */,
+				F15262012323E056005E393F /* Assets.xcassets */,
+				F15262062323E056005E393F /* Info.plist */,
+			);
+			path = "kollektiv-ios";
+			sourceTree = "<group>";
+		};
+		F152620E2323E056005E393F /* kollektiv-iosTests */ = {
+			isa = PBXGroup;
+			children = (
+				F152620F2323E056005E393F /* kollektiv_iosTests.swift */,
+				F15262112323E056005E393F /* Info.plist */,
+			);
+			path = "kollektiv-iosTests";
+			sourceTree = "<group>";
+		};
+		F152621C2323ED22005E393F /* collective */ = {
+			isa = PBXGroup;
+			children = (
+				F152621D2323ED79005E393F /* Collective.swift */,
+			);
+			path = collective;
+			sourceTree = "<group>";
+		};
+		F152621F2323EDE6005E393F /* item */ = {
+			isa = PBXGroup;
+			children = (
+				F15262202323EDFE005E393F /* Item.swift */,
+			);
+			path = item;
+			sourceTree = "<group>";
+		};
+		F15262222323F06E005E393F /* user */ = {
+			isa = PBXGroup;
+			children = (
+				F15262232323F07B005E393F /* User.swift */,
+			);
+			path = user;
+			sourceTree = "<group>";
+		};
+		F15262252323FA29005E393F /* fornt-page */ = {
+			isa = PBXGroup;
+			children = (
+				F15261FC2323E053005E393F /* FrontPageViewController.swift */,
+			);
+			path = "fornt-page";
+			sourceTree = "<group>";
+		};
+		F15262262323FA3D005E393F /* shopping-list */ = {
+			isa = PBXGroup;
+			children = (
+				F15262292323FB61005E393F /* ShoppingListViewController.swift */,
+			);
+			path = "shopping-list";
+			sourceTree = "<group>";
+		};
+		F15262272323FA4C005E393F /* in-fridge */ = {
+			isa = PBXGroup;
+			children = (
+				F152622B2323FE5A005E393F /* InFridgeViewController.swift */,
+			);
+			path = "in-fridge";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F15261F62323E053005E393F /* kollektiv-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F15262142323E056005E393F /* Build configuration list for PBXNativeTarget "kollektiv-ios" */;
+			buildPhases = (
+				F15261F32323E053005E393F /* Sources */,
+				F15261F42323E053005E393F /* Frameworks */,
+				F15261F52323E053005E393F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "kollektiv-ios";
+			productName = "kollektiv-ios";
+			productReference = F15261F72323E053005E393F /* kollektiv-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F152620A2323E056005E393F /* kollektiv-iosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F15262172323E056005E393F /* Build configuration list for PBXNativeTarget "kollektiv-iosTests" */;
+			buildPhases = (
+				F15262072323E056005E393F /* Sources */,
+				F15262082323E056005E393F /* Frameworks */,
+				F15262092323E056005E393F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F152620D2323E056005E393F /* PBXTargetDependency */,
+			);
+			name = "kollektiv-iosTests";
+			productName = "kollektiv-iosTests";
+			productReference = F152620B2323E056005E393F /* kollektiv-iosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F15261EF2323E053005E393F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1030;
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = "Simen Fonnes";
+				TargetAttributes = {
+					F15261F62323E053005E393F = {
+						CreatedOnToolsVersion = 10.3;
+					};
+					F152620A2323E056005E393F = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = F15261F62323E053005E393F;
+					};
+				};
+			};
+			buildConfigurationList = F15261F22323E053005E393F /* Build configuration list for PBXProject "kollektiv-ios" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F15261EE2323E053005E393F;
+			productRefGroup = F15261F82323E053005E393F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F15261F62323E053005E393F /* kollektiv-ios */,
+				F152620A2323E056005E393F /* kollektiv-iosTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F15261F52323E053005E393F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F15262022323E056005E393F /* Assets.xcassets in Resources */,
+				F152621B2323EC63005E393F /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F15262092323E056005E393F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F15261F32323E053005E393F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F152622C2323FE5A005E393F /* InFridgeViewController.swift in Sources */,
+				F15262212323EDFE005E393F /* Item.swift in Sources */,
+				F15261FD2323E053005E393F /* FrontPageViewController.swift in Sources */,
+				F152622A2323FB61005E393F /* ShoppingListViewController.swift in Sources */,
+				F15261FB2323E053005E393F /* AppDelegate.swift in Sources */,
+				F15262242323F07B005E393F /* User.swift in Sources */,
+				F152621E2323ED79005E393F /* Collective.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F15262072323E056005E393F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F15262102323E056005E393F /* kollektiv_iosTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F152620D2323E056005E393F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F15261F62323E053005E393F /* kollektiv-ios */;
+			targetProxy = F152620C2323E056005E393F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		F15262122323E056005E393F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F15262132323E056005E393F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F15262152323E056005E393F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6T3V9MK8X5;
+				INFOPLIST_FILE = "kollektiv-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "no.fonnesjarholt.kollektiv-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F15262162323E056005E393F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6T3V9MK8X5;
+				INFOPLIST_FILE = "kollektiv-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "no.fonnesjarholt.kollektiv-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F15262182323E056005E393F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6T3V9MK8X5;
+				INFOPLIST_FILE = "kollektiv-iosTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "no.fonnesjarholt.kollektiv-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kollektiv-ios.app/kollektiv-ios";
+			};
+			name = Debug;
+		};
+		F15262192323E056005E393F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6T3V9MK8X5;
+				INFOPLIST_FILE = "kollektiv-iosTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "no.fonnesjarholt.kollektiv-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kollektiv-ios.app/kollektiv-ios";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F15261F22323E053005E393F /* Build configuration list for PBXProject "kollektiv-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F15262122323E056005E393F /* Debug */,
+				F15262132323E056005E393F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F15262142323E056005E393F /* Build configuration list for PBXNativeTarget "kollektiv-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F15262152323E056005E393F /* Debug */,
+				F15262162323E056005E393F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F15262172323E056005E393F /* Build configuration list for PBXNativeTarget "kollektiv-iosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F15262182323E056005E393F /* Debug */,
+				F15262192323E056005E393F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F15261EF2323E053005E393F /* Project object */;
+}
