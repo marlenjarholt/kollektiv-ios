@@ -17,6 +17,7 @@
 		F15262242323F07B005E393F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15262232323F07B005E393F /* User.swift */; };
 		F152622A2323FB61005E393F /* ShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15262292323FB61005E393F /* ShoppingListViewController.swift */; };
 		F152622C2323FE5A005E393F /* InFridgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F152622B2323FE5A005E393F /* InFridgeViewController.swift */; };
+		F15EF37A232505B8009B3E62 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15EF379232505B8009B3E62 /* UserViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		F15262232323F07B005E393F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F15262292323FB61005E393F /* ShoppingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListViewController.swift; sourceTree = "<group>"; };
 		F152622B2323FE5A005E393F /* InFridgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InFridgeViewController.swift; sourceTree = "<group>"; };
+		F15EF379232505B8009B3E62 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				F15262232323F07B005E393F /* User.swift */,
+				F15EF379232505B8009B3E62 /* UserViewController.swift */,
 			);
 			path = user;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F152622C2323FE5A005E393F /* InFridgeViewController.swift in Sources */,
+				F15EF37A232505B8009B3E62 /* UserViewController.swift in Sources */,
 				F15262212323EDFE005E393F /* Item.swift in Sources */,
 				F15261FD2323E053005E393F /* FrontPageViewController.swift in Sources */,
 				F152622A2323FB61005E393F /* ShoppingListViewController.swift in Sources */,
