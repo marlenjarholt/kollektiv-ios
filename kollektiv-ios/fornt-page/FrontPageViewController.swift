@@ -43,7 +43,7 @@ class FrontPageViewController: UIViewController, UITableViewDelegate, UITableVie
             let text = textField?.text
             
             if text != nil && text != "" {
-                let newUser = User.init(name: text!)
+                let newUser = User.init(name: text!, birthDay: Date(), nickname: nil, profilePic: nil)
                 self.collective.userList.append(newUser)
                 self.tableView.reloadData()
             } else {
@@ -75,7 +75,7 @@ class FrontPageViewController: UIViewController, UITableViewDelegate, UITableVie
                 preferredStyle: .actionSheet
             )
             
-            alert.addAction(UIAlertAction.init(title: "Slett", style: .destructive, handler: { [weak alert] (_) in
+            alert.addAction(UIAlertAction.init(title: "Slett", style: .destructive, handler: { _ in
                 self.collective.userList.remove(at: indexPath.row)
                 self.tableView.reloadData()
             }))
@@ -86,14 +86,27 @@ class FrontPageViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let user = collective.userList[indexPath.row]
+        let userViewController = UserViewController.init(user: user, nibName: nil, bundle: nil)
+        
+        let backButton = UIBarButtonItem.init()
+        backButton.title = "Tilbake"
+        backButton.tintColor = .black
+        navigationItem.backBarButtonItem = backButton
+        
+        userViewController.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(userViewController, animated: true)
+    }
+    
     private func makeCollective() -> Collective {
         let agurk = Item.init(name: "Agurk")
         let tomat = Item.init(name: "Tomat")
         
-        let marlen = User.init(name: "Marlen")
-        let ingeborg = User.init(name: "Ingeborg")
-        let katrine = User.init(name: "Katrine")
-        let vibeke = User.init(name: "Vibeke")
+        let marlen = User.init(name: "Marlen", birthDay: marlenDate()!, nickname: nil, profilePic: UIImage.init(named: "IMG_1700"))
+        let ingeborg = User.init(name: "Ingeborg", birthDay: Date(), nickname: nil, profilePic: nil)
+        let katrine = User.init(name: "Katrine", birthDay: Date(), nickname: nil, profilePic: nil)
+        let vibeke = User.init(name: "Vibeke", birthDay: Date(), nickname: nil, profilePic: nil)
         
         let detteKollektivetTrengerEtNavn = Collective.init(
             name: "Dette kollektivet trenger et navn",
@@ -103,5 +116,12 @@ class FrontPageViewController: UIViewController, UITableViewDelegate, UITableVie
         )
         
         return detteKollektivetTrengerEtNavn
+    }
+    
+    func marlenDate() -> Date? {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd HH:mm"
+        let someDateTime = formatter.date(from: "1998/03/26 08:10")
+        return someDateTime
     }
 }
