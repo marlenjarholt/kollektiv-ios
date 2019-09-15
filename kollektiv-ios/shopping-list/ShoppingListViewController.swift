@@ -2,8 +2,8 @@
 //  ShoppingListViewController.swift
 //  kollektiv-ios
 //
-//  Created by Simen Fonnes on 07/09/2019.
-//  Copyright © 2019 Simen Fonnes. All rights reserved.
+//  Created by Simen Fonnes & Marlen Jarholt on 07/09/2019.
+//  Copyright © 2019 Simen Fonnes & Marlen Jarholt. All rights reserved.
 //
 
 import UIKit
