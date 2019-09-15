@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  kollektiv-ios
 //
-//  Created by Simen Fonnes on 07/09/2019.
-//  Copyright © 2019 Simen Fonnes. All rights reserved.
+//  Created by Simen Fonnes & Marlen Jarholt on 07/09/2019.
+//  Copyright © 2019 Simen Fonnes & Marlen Jarholt. All rights reserved.
 //
 
 import UIKit
@@ -46,9 +46,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = .white
         window?.makeKeyAndVisible()
         
-        UINavigationBar.appearance().barTintColor = UIColor(red:0.63, green:1.00, blue:0.87, alpha:1.0)
+        UINavigationBar.appearance().barTintColor = Colors.mainColor
         
-        UITabBar.appearance().barTintColor = UIColor(red:0.63, green:1.00, blue:0.87, alpha:1.0)
+        UITabBar.appearance().barTintColor = Colors.mainColor
         UITabBar.appearance().tintColor = .black
         
         return true
