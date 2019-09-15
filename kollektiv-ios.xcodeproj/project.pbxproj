@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		F11E60E4232D0E0400AEB25E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11E60E3232D0E0400AEB25E /* Colors.swift */; };
+		F11E60E7232E7D6200AEB25E /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11E60E6232E7D6200AEB25E /* RegistrationViewController.swift */; };
+		F11E60E9232E806300AEB25E /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11E60E8232E806300AEB25E /* OnboardingViewController.swift */; };
 		F15261FB2323E053005E393F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15261FA2323E053005E393F /* AppDelegate.swift */; };
 		F15261FD2323E053005E393F /* FrontPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15261FC2323E053005E393F /* FrontPageViewController.swift */; };
 		F15262022323E056005E393F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F15262012323E056005E393F /* Assets.xcassets */; };
@@ -33,6 +35,8 @@
 
 /* Begin PBXFileReference section */
 		F11E60E3232D0E0400AEB25E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		F11E60E6232E7D6200AEB25E /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		F11E60E8232E806300AEB25E /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		F15261F72323E053005E393F /* kollektiv-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "kollektiv-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F15261FA2323E053005E393F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F15261FC2323E053005E393F /* FrontPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPageViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +82,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		F11E60E5232E7D2E00AEB25E /* registration */ = {
+			isa = PBXGroup;
+			children = (
+				F11E60E6232E7D6200AEB25E /* RegistrationViewController.swift */,
+				F11E60E8232E806300AEB25E /* OnboardingViewController.swift */,
+			);
+			path = registration;
+			sourceTree = "<group>";
+		};
 		F15261EE2323E053005E393F = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +112,7 @@
 		F15261F92323E053005E393F /* kollektiv-ios */ = {
 			isa = PBXGroup;
 			children = (
+				F11E60E5232E7D2E00AEB25E /* registration */,
 				F11E60E2232D0DA600AEB25E /* Resources */,
 				F15262272323FA4C005E393F /* in-fridge */,
 				F15262262323FA3D005E393F /* shopping-list */,
@@ -274,10 +288,12 @@
 				F11E60E4232D0E0400AEB25E /* Colors.swift in Sources */,
 				F15EF37A232505B8009B3E62 /* UserViewController.swift in Sources */,
 				F15262212323EDFE005E393F /* Item.swift in Sources */,
+				F11E60E7232E7D6200AEB25E /* RegistrationViewController.swift in Sources */,
 				F15261FD2323E053005E393F /* FrontPageViewController.swift in Sources */,
 				F152622A2323FB61005E393F /* ShoppingListViewController.swift in Sources */,
 				F15261FB2323E053005E393F /* AppDelegate.swift in Sources */,
 				F15262242323F07B005E393F /* User.swift in Sources */,
+				F11E60E9232E806300AEB25E /* OnboardingViewController.swift in Sources */,
 				F152621E2323ED79005E393F /* Collective.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
