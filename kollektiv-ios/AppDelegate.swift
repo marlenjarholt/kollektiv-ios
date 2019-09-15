@@ -12,10 +12,32 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var isLoggedIn = false
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
+        if isLoggedIn{
+            launchFrontPageViewController()
+        }else{
+            launchOnboardingViewController()
+        }
+        window?.backgroundColor = .white
+        window?.makeKeyAndVisible()
+        
+        UINavigationBar.appearance().barTintColor = Colors.mainColor
+        
+        UITabBar.appearance().barTintColor = Colors.mainColor
+        UITabBar.appearance().tintColor = .black
+        
+        return true
+    }
+    
+    func launchFrontPageViewController(){
         let frontPageViewController = UINavigationController.init(rootViewController: FrontPageViewController.init())
         
         let shoppingListViewController = UINavigationController.init(rootViewController: ShoppingListViewController.init())
@@ -41,17 +63,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             inFridgeViewController
         ]
         
-        window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = tabViewController
-        window?.backgroundColor = .white
-        window?.makeKeyAndVisible()
+    }
+    
+    func launchOnboardingViewController(){
         
-        UINavigationBar.appearance().barTintColor = Colors.mainColor
-        
-        UITabBar.appearance().barTintColor = Colors.mainColor
-        UITabBar.appearance().tintColor = .black
-        
-        return true
+        let onboardingViewController = OnboardingViewController.init()
+        window?.rootViewController = onboardingViewController
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

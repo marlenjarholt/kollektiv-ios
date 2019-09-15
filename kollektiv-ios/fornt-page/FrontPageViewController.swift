@@ -152,12 +152,17 @@ extension FrontPageViewController: UITableViewDelegate, UITableViewDataSource{
         navigationController?.pushViewController(userViewController, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 56
+    }
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let containerView = UIView.init(frame: CGRect.init(x: 0, y: 100, width: tableView.frame.width, height: 44))
+        let containerView = UIView.init(frame: CGRect.init(x: 0, y: 100, width: tableView.frame.width, height: 56))
         containerView.backgroundColor = Colors.mainColor
         
-        let sectionLabel = UILabel.init(frame: CGRect.init(x: 16, y: 0, width: tableView.frame.width - 32, height: 44))
+        let sectionLabel = UILabel.init(frame: CGRect.init(x: 16, y: 18, width: tableView.frame.width - 32, height: 44))
         sectionLabel.text = "Beboere"
+        sectionLabel.font = UIFont.boldSystemFont(ofSize: 28)
         
         
         containerView.addSubview(sectionLabel)
