@@ -3,13 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1CA50FF393F3C75F0DD86A29 /* Pods_kollektiv_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 120AB274E89C6CC8BD417D06 /* Pods_kollektiv_iosTests.framework */; };
 		F11E60E4232D0E0400AEB25E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11E60E3232D0E0400AEB25E /* Colors.swift */; };
-		F11E60E7232E7D6200AEB25E /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11E60E6232E7D6200AEB25E /* RegistrationViewController.swift */; };
+		F11E60E7232E7D6200AEB25E /* UserRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11E60E6232E7D6200AEB25E /* UserRegistrationViewController.swift */; };
 		F11E60E9232E806300AEB25E /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11E60E8232E806300AEB25E /* OnboardingViewController.swift */; };
+		F11E60EB232EAC9B00AEB25E /* RegistrationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11E60EA232EAC9B00AEB25E /* RegistrationCell.swift */; };
 		F15261FB2323E053005E393F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15261FA2323E053005E393F /* AppDelegate.swift */; };
 		F15261FD2323E053005E393F /* FrontPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15261FC2323E053005E393F /* FrontPageViewController.swift */; };
 		F15262022323E056005E393F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F15262012323E056005E393F /* Assets.xcassets */; };
@@ -21,6 +23,10 @@
 		F152622A2323FB61005E393F /* ShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15262292323FB61005E393F /* ShoppingListViewController.swift */; };
 		F152622C2323FE5A005E393F /* InFridgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F152622B2323FE5A005E393F /* InFridgeViewController.swift */; };
 		F15EF37A232505B8009B3E62 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15EF379232505B8009B3E62 /* UserViewController.swift */; };
+		F1B42FC12337B44C006B54FE /* UserDateRegistrationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B42FC02337B44C006B54FE /* UserDateRegistrationCell.swift */; };
+		F1B42FC32337DEFD006B54FE /* OnboardCollectiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B42FC22337DEFD006B54FE /* OnboardCollectiveViewController.swift */; };
+		F1B42FC52337E257006B54FE /* CollectiveRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B42FC42337E257006B54FE /* CollectiveRegistrationViewController.swift */; };
+		FE4551C2046CEED4898AB8F4 /* Pods_kollektiv_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8280DAE24CF2F41093AC131 /* Pods_kollektiv_ios.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +40,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		120AB274E89C6CC8BD417D06 /* Pods_kollektiv_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kollektiv_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F3BBFA86DF469B699773FBF /* Pods-kollektiv-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kollektiv-ios.release.xcconfig"; path = "Target Support Files/Pods-kollektiv-ios/Pods-kollektiv-ios.release.xcconfig"; sourceTree = "<group>"; };
+		5F08EEBF0E089FA4CE42AC0B /* Pods-kollektiv-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kollektiv-iosTests.debug.xcconfig"; path = "Target Support Files/Pods-kollektiv-iosTests/Pods-kollektiv-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A8280DAE24CF2F41093AC131 /* Pods_kollektiv_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kollektiv_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D41408BABB5701244463F836 /* Pods-kollektiv-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kollektiv-ios.debug.xcconfig"; path = "Target Support Files/Pods-kollektiv-ios/Pods-kollektiv-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		EFE4E6B327EE610E4A6655F8 /* Pods-kollektiv-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kollektiv-iosTests.release.xcconfig"; path = "Target Support Files/Pods-kollektiv-iosTests/Pods-kollektiv-iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		F11E60E3232D0E0400AEB25E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		F11E60E6232E7D6200AEB25E /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		F11E60E6232E7D6200AEB25E /* UserRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistrationViewController.swift; sourceTree = "<group>"; };
 		F11E60E8232E806300AEB25E /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		F11E60EA232EAC9B00AEB25E /* RegistrationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationCell.swift; sourceTree = "<group>"; };
 		F15261F72323E053005E393F /* kollektiv-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "kollektiv-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F15261FA2323E053005E393F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F15261FC2323E053005E393F /* FrontPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPageViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +65,9 @@
 		F15262292323FB61005E393F /* ShoppingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListViewController.swift; sourceTree = "<group>"; };
 		F152622B2323FE5A005E393F /* InFridgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InFridgeViewController.swift; sourceTree = "<group>"; };
 		F15EF379232505B8009B3E62 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		F1B42FC02337B44C006B54FE /* UserDateRegistrationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDateRegistrationCell.swift; sourceTree = "<group>"; };
+		F1B42FC22337DEFD006B54FE /* OnboardCollectiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardCollectiveViewController.swift; sourceTree = "<group>"; };
+		F1B42FC42337E257006B54FE /* CollectiveRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectiveRegistrationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE4551C2046CEED4898AB8F4 /* Pods_kollektiv_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,12 +83,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CA50FF393F3C75F0DD86A29 /* Pods_kollektiv_iosTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0134476E4119B82A06349C9B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D41408BABB5701244463F836 /* Pods-kollektiv-ios.debug.xcconfig */,
+				4F3BBFA86DF469B699773FBF /* Pods-kollektiv-ios.release.xcconfig */,
+				5F08EEBF0E089FA4CE42AC0B /* Pods-kollektiv-iosTests.debug.xcconfig */,
+				EFE4E6B327EE610E4A6655F8 /* Pods-kollektiv-iosTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CB2CDF33C3AF572FDC786642 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A8280DAE24CF2F41093AC131 /* Pods_kollektiv_ios.framework */,
+				120AB274E89C6CC8BD417D06 /* Pods_kollektiv_iosTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F11E60E2232D0DA600AEB25E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,8 +123,12 @@
 		F11E60E5232E7D2E00AEB25E /* registration */ = {
 			isa = PBXGroup;
 			children = (
-				F11E60E6232E7D6200AEB25E /* RegistrationViewController.swift */,
+				F11E60E6232E7D6200AEB25E /* UserRegistrationViewController.swift */,
 				F11E60E8232E806300AEB25E /* OnboardingViewController.swift */,
+				F11E60EA232EAC9B00AEB25E /* RegistrationCell.swift */,
+				F1B42FC02337B44C006B54FE /* UserDateRegistrationCell.swift */,
+				F1B42FC22337DEFD006B54FE /* OnboardCollectiveViewController.swift */,
+				F1B42FC42337E257006B54FE /* CollectiveRegistrationViewController.swift */,
 			);
 			path = registration;
 			sourceTree = "<group>";
@@ -97,6 +139,8 @@
 				F15261F92323E053005E393F /* kollektiv-ios */,
 				F152620E2323E056005E393F /* kollektiv-iosTests */,
 				F15261F82323E053005E393F /* Products */,
+				0134476E4119B82A06349C9B /* Pods */,
+				CB2CDF33C3AF572FDC786642 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -191,9 +235,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F15262142323E056005E393F /* Build configuration list for PBXNativeTarget "kollektiv-ios" */;
 			buildPhases = (
+				162D6351F69C7FBC42260F8F /* [CP] Check Pods Manifest.lock */,
 				F15261F32323E053005E393F /* Sources */,
 				F15261F42323E053005E393F /* Frameworks */,
 				F15261F52323E053005E393F /* Resources */,
+				EA3DE85BD906F6B67DD4E498 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -208,6 +254,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F15262172323E056005E393F /* Build configuration list for PBXNativeTarget "kollektiv-iosTests" */;
 			buildPhases = (
+				59AABC48B71E4685869FDA29 /* [CP] Check Pods Manifest.lock */,
 				F15262072323E056005E393F /* Sources */,
 				F15262082323E056005E393F /* Frameworks */,
 				F15262092323E056005E393F /* Resources */,
@@ -279,17 +326,85 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		162D6351F69C7FBC42260F8F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-kollektiv-ios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		59AABC48B71E4685869FDA29 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-kollektiv-iosTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA3DE85BD906F6B67DD4E498 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kollektiv-ios/Pods-kollektiv-ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kollektiv-ios/Pods-kollektiv-ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-kollektiv-ios/Pods-kollektiv-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F15261F32323E053005E393F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1B42FC52337E257006B54FE /* CollectiveRegistrationViewController.swift in Sources */,
 				F152622C2323FE5A005E393F /* InFridgeViewController.swift in Sources */,
+				F1B42FC12337B44C006B54FE /* UserDateRegistrationCell.swift in Sources */,
 				F11E60E4232D0E0400AEB25E /* Colors.swift in Sources */,
 				F15EF37A232505B8009B3E62 /* UserViewController.swift in Sources */,
+				F11E60EB232EAC9B00AEB25E /* RegistrationCell.swift in Sources */,
 				F15262212323EDFE005E393F /* Item.swift in Sources */,
-				F11E60E7232E7D6200AEB25E /* RegistrationViewController.swift in Sources */,
+				F11E60E7232E7D6200AEB25E /* UserRegistrationViewController.swift in Sources */,
 				F15261FD2323E053005E393F /* FrontPageViewController.swift in Sources */,
+				F1B42FC32337DEFD006B54FE /* OnboardCollectiveViewController.swift in Sources */,
 				F152622A2323FB61005E393F /* ShoppingListViewController.swift in Sources */,
 				F15261FB2323E053005E393F /* AppDelegate.swift in Sources */,
 				F15262242323F07B005E393F /* User.swift in Sources */,
@@ -435,16 +550,17 @@
 		};
 		F15262152323E056005E393F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D41408BABB5701244463F836 /* Pods-kollektiv-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6T3V9MK8X5;
+				DEVELOPMENT_TEAM = L9938G85M7;
 				INFOPLIST_FILE = "kollektiv-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "no.fonnesjarholt.kollektiv-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "no.fonnesjarholt2.kollektiv-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -453,16 +569,17 @@
 		};
 		F15262162323E056005E393F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F3BBFA86DF469B699773FBF /* Pods-kollektiv-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6T3V9MK8X5;
+				DEVELOPMENT_TEAM = L9938G85M7;
 				INFOPLIST_FILE = "kollektiv-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "no.fonnesjarholt.kollektiv-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "no.fonnesjarholt2.kollektiv-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -471,6 +588,7 @@
 		};
 		F15262182323E056005E393F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F08EEBF0E089FA4CE42AC0B /* Pods-kollektiv-iosTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -492,6 +610,7 @@
 		};
 		F15262192323E056005E393F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFE4E6B327EE610E4A6655F8 /* Pods-kollektiv-iosTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

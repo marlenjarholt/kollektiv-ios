@@ -10,4 +10,5 @@ import UIKit
 
 struct Colors {
     static let mainColor = UIColor(red:0.63, green:1.00, blue:0.87, alpha:1.0)
+    static let grayTransparent = UIColor(red:0.83, green:0.83, blue:0.83, alpha:0.5)
 }

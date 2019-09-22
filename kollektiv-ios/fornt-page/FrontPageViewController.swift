@@ -11,9 +11,18 @@ import UIKit
 class FrontPageViewController: UIViewController{
     
     var tableView: UITableView!
-    var collective: Collective!
+    var collective: Collective
     fileprivate var headerView: HeaderView!
     var addButton: UIBarButtonItem!
+    
+    init() {
+        self.collective = AppDelegate.collective ?? FrontPageViewController.makeCollective()
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +33,7 @@ class FrontPageViewController: UIViewController{
     }
     
     private func setInitialValues(){
-        collective = makeCollective()
+        //collective = makeCollective()
         navigationItem.title = "Hjem"
     }
     
@@ -78,7 +87,7 @@ class FrontPageViewController: UIViewController{
         present(alert, animated: true, completion: nil)
     }
 
-    private func makeCollective() -> Collective {
+    static func makeCollective() -> Collective {
         let agurk = Item.init(name: "Agurk")
         let tomat = Item.init(name: "Tomat")
         
@@ -98,7 +107,7 @@ class FrontPageViewController: UIViewController{
         return detteKollektivetTrengerEtNavn
     }
     
-    func marlenDate() -> Date? {
+    static func marlenDate() -> Date? {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd HH:mm"
         let someDateTime = formatter.date(from: "1998/03/26 08:10")

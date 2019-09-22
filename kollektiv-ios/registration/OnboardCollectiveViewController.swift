@@ -1,25 +1,34 @@
 //
-//  RegistrationViewController.swift
+//  OnboardCollectiveViewController.swift
 //  kollektiv-ios
 //
-//  Created by Simen Fonnes & Marlen Jarholt on 15/09/2019.
+//  Created by Simen Fonnes & Marlen Jarholt on 22/09/2019.
 //  Copyright © 2019 Simen Fonnes & Marlen Jarholt. All rights reserved.
 //
 
 import UIKit
 
-class OnboardingViewController: UIViewController{
+class OnboardCollectiveViewController: UIViewController{
     
     var registerButton: UIButton!
-    var logInButton: UIButton!
+    var newButton: UIButton!
     var buttonBox: UIView!
     let buttonHeigth: CGFloat = 68
     let buttonWidth: CGFloat = 238
+    var user: User
     
+    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, user: User) {
+        self.user = user
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(user)
         setupViews()
         bindStyles()
     }
@@ -37,13 +46,14 @@ class OnboardingViewController: UIViewController{
                 width: buttonWidth,
                 height: buttonBoxHeight))
         
-        registerButton = makeButton(name: "Registrer", y: 0)
-        logInButton = makeButton(name: "Logg inn", y: buttonHeigth + buttonMargin)
+        registerButton = makeButton(name: "Meld inn i kollektiv", y: 0)
+        newButton = makeButton(name: "Lag nytt kollektiv", y: buttonHeigth + buttonMargin)
         
-        registerButton.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(registerButtonTapped)))
+        newButton.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(newButtonTapped)))
         
         buttonBox.addSubview(registerButton)
-        buttonBox.addSubview(logInButton)
+        buttonBox.addSubview(newButton)
+        title = "Velkommen, \(user.name)"
         
         view.addSubview(buttonBox)
     }
@@ -64,14 +74,13 @@ class OnboardingViewController: UIViewController{
         return button
     }
     
-    @objc func registerButtonTapped(){
+    @objc func newButtonTapped(){
         let backItem = UIBarButtonItem()
         backItem.title = "Tilbake"
         navigationItem.backBarButtonItem = backItem
         backItem.tintColor = .black
-        navigationController?.pushViewController(UserRegistrationViewController.init(), animated: true)
+        navigationController?.pushViewController(CollectiveRegistrationViewController.init(user: user), animated: true)
         
     }
     
 }
-

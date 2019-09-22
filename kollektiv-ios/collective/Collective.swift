@@ -10,8 +10,8 @@ import Foundation
 
 struct Collective{
     var name: String
-    var shoppingList:[Item]
-    var inFrigdeList:[Item]
-    var userList:[User]
+    var shoppingList: [Item]
+    var inFrigdeList: [Item]
+    var userList: [User]
     var address: String
 }

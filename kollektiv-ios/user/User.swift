@@ -14,6 +14,7 @@ struct User {
     var nickname: String?
     var profilePic: UIImage
     var timeTable: [[String]]?
+    var collective: Collective? = nil
     
     init(name: String, birthDay: Date, nickname: String?, profilePic: UIImage?) {
         self.name = name

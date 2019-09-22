@@ -13,6 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var isLoggedIn = false
+    static var collective: Collective?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -21,9 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        if isLoggedIn{
+        if isLoggedIn {
             launchFrontPageViewController()
-        }else{
+        } else {
             launchOnboardingViewController()
         }
         window?.backgroundColor = .white
@@ -68,8 +69,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func launchOnboardingViewController(){
         
-        let onboardingViewController = OnboardingViewController.init()
+        let onboardingViewController = UINavigationController.init(
+            rootViewController: OnboardingViewController.init()) 
         window?.rootViewController = onboardingViewController
+    }
+    
+    class func getCollective() -> Collective? {
+        return collective
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
