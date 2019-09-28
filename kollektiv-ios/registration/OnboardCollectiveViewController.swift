@@ -7,14 +7,13 @@
 //
 
 import UIKit
+import Cartography
 
 class OnboardCollectiveViewController: UIViewController{
     
     var registerButton: UIButton!
     var newButton: UIButton!
-    var buttonBox: UIView!
     let buttonHeigth: CGFloat = 68
-    let buttonWidth: CGFloat = 238
     var user: User
     
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, user: User) {
@@ -28,48 +27,50 @@ class OnboardCollectiveViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(user)
+        print(user) //husk å slette
         setupViews()
+        setupConstrains()
         bindStyles()
     }
     
     private func setupViews(){
-        let buttonMargin: CGFloat = 40
-        let horizontalCenter = UIScreen.main.bounds.width / 2
-        let verticalCenter = UIScreen.main.bounds.height / 2
-        let buttonBoxHeight = buttonHeigth * 2 + buttonMargin
-        
-        buttonBox = UIView.init(
-            frame: CGRect.init(
-                x: horizontalCenter - buttonWidth / 2,
-                y: verticalCenter - buttonBoxHeight / 2,
-                width: buttonWidth,
-                height: buttonBoxHeight))
-        
-        registerButton = makeButton(name: "Meld inn i kollektiv", y: 0)
-        newButton = makeButton(name: "Lag nytt kollektiv", y: buttonHeigth + buttonMargin)
+        registerButton = makeButton(name: "Meld inn i kollektiv")
+        newButton = makeButton(name: "Lag nytt kollektiv")
         
         newButton.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(newButtonTapped)))
         
-        buttonBox.addSubview(registerButton)
-        buttonBox.addSubview(newButton)
+        view.addSubview(registerButton)
+        view.addSubview(newButton)
         title = "Velkommen, \(user.name)"
-        
-        view.addSubview(buttonBox)
     }
     
     private func bindStyles(){
         view.backgroundColor = .white
     }
+
+    private func setupConstrains() {
+        constrain(view, registerButton, newButton) { view, registerButton, newButton in
+            let buttonMargin: CGFloat = 20
+            let buttonWidth: CGFloat = 238
+
+            newButton.bottom == view.centerY - buttonMargin
+            newButton.centerX == view.centerX
+            newButton.width == buttonWidth
+            newButton.height == buttonHeigth
+
+            registerButton.top == view.centerY + buttonMargin
+            registerButton.centerX == view.centerX
+            registerButton.width == buttonWidth
+            registerButton.height == buttonHeigth
+        }
+    }
     
-    private func makeButton(name: String, y: CGFloat) -> UIButton{
-        
-        let button = UIButton.init(
-            frame: CGRect.init(x: 0, y: y, width: buttonWidth, height: buttonHeigth))
+    private func makeButton(name: String) -> UIButton{
+        let button = UIButton.init(frame: .zero)
         button.setTitle(name, for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = Colors.mainColor
-        button.layer.cornerRadius = buttonHeigth/2
+        button.layer.cornerRadius = buttonHeigth / 2
         
         return button
     }
@@ -80,7 +81,5 @@ class OnboardCollectiveViewController: UIViewController{
         navigationItem.backBarButtonItem = backItem
         backItem.tintColor = .black
         navigationController?.pushViewController(CollectiveRegistrationViewController.init(user: user), animated: true)
-        
     }
-    
 }

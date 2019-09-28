@@ -13,6 +13,7 @@ class UserRegistrationViewController: UIViewController, UIImagePickerControllerD
     
     var tableView: UITableView!
     fileprivate var footerView: FooterView!
+    fileprivate var validationAlert: ValidationAlert!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,27 +23,22 @@ class UserRegistrationViewController: UIViewController, UIImagePickerControllerD
         bindStyles()
     }
     
-    private func setupViews(){
+    private func setupViews() {
         tableView = UITableView.init(frame: .zero)
-        
-        
+        validationAlert = ValidationAlert.init(frame: .zero)
+
         footerView = FooterView.init(
             frame: CGRect.init(
                 x: 0,
                 y: 0,
                 width: tableView.frame.width,
-                height: 200), imageTapped: {
-                    self.launchImagePicker()
-                    
-        })
+                height: 200),
+            imageTapped: { self.launchImagePicker() }
+        )
         
         tableView.register(RegistrationCell.self, forCellReuseIdentifier: RegistrationCell.reusableIdentifier)
         tableView.register(UserDateRegistrationCell.self, forCellReuseIdentifier: UserDateRegistrationCell.reusableIdentifier)
-        
-        
-        
         tableView.tableFooterView = footerView
-        view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -50,14 +46,15 @@ class UserRegistrationViewController: UIViewController, UIImagePickerControllerD
             title: "Lagre",
             style: .done,
             target: self,
-            action: #selector(userCreated))
+            action: #selector(userCreated)
+        )
         creatUser.tintColor = .black
         
         navigationItem.rightBarButtonItem = creatUser
         title = "Opprett bruker"
-        
-        
-        
+
+        view.addSubview(tableView)
+        view.addSubview(validationAlert)
     }
     
     private func launchImagePicker(){
@@ -89,51 +86,113 @@ class UserRegistrationViewController: UIViewController, UIImagePickerControllerD
     }
     
     private func setupConstraints() {
-        constrain(view, tableView) { view, tableView in
+        constrain(view, tableView, validationAlert) { view, tableView, validationAlert in
             tableView.top == view.top
             tableView.bottom == view.bottom
             tableView.right == view.right
             tableView.left == view.left
+
+            validationAlert.bottom == view.bottom
+            validationAlert.right == view.right
+            validationAlert.left == view.left
+            validationAlert.height == 100
         }
     }
     
     private func bindStyles(){
         view.backgroundColor = .white
-        
+        validationAlert.isHidden = true
     }
-    
-    // TODO: passordsjekk og feltsjekk
+
     @objc func userCreated() {
-        guard let name = (tableView.cellForRow(at: IndexPath.init(row: 0, section: 0)) as! RegistrationCell).userInput.text else {
-            print("Navn er nil")
-            return
-        }
-        guard let eMail = (tableView.cellForRow(at: IndexPath.init(row: 1, section: 0)) as! RegistrationCell).userInput.text else {
-            print("epost er nil")
-            return
-        }
-        
-        guard let pasword1 = (tableView.cellForRow(at: IndexPath.init(row: 2, section: 0)) as! RegistrationCell).userInput.text else {
-            print("passord er nil")
-            return
-        }
-        
-        guard let pasword2 = (tableView.cellForRow(at: IndexPath.init(row: 3, section: 0)) as! RegistrationCell).userInput.text else {
-            print("passord er nil")
-            return
-        }
-        
+        let name = (tableView.cellForRow(at: IndexPath.init(row: 0, section: 0)) as! RegistrationCell).userInput.text
+        let eMail = (tableView.cellForRow(at: IndexPath.init(row: 1, section: 0)) as! RegistrationCell).userInput.text
+        let password1 = (tableView.cellForRow(at: IndexPath.init(row: 2, section: 0)) as! RegistrationCell).userInput.text
+        let password2 = (tableView.cellForRow(at: IndexPath.init(row: 3, section: 0)) as! RegistrationCell).userInput.text
         let birthday = (tableView.cellForRow(at: IndexPath.init(row: 4, section: 0)) as! UserDateRegistrationCell).datePicker.date
+
+        if !validateUser(name: name, email: eMail, password1: password1, password2: password2) {
+            validationAlert.isHidden = false
+            return
+        }
+
+        validationAlert.isHidden = true
         
         let newUser = User.init(
-            name: name,
+            name: name!,
             birthDay: birthday,
             nickname: nil,
             profilePic: footerView.picture.image)
+
         
         let vc = OnboardCollectiveViewController.init(nibName: nil, bundle: nil, user: newUser)
         
         navigationController?.pushViewController(vc, animated: true)
+    }
+
+    func validateUser(name: String?, email: String?, password1: String?, password2: String?) -> Bool {
+        var isValid = true
+        var bothPasswordsValid = true
+
+        var errors = [String]()
+        if !validateName(name: name) {
+            errors.append("Ugyldig navn: må ha fornavn og etternavn")
+            isValid = false
+        }
+
+        if !validateEmail(email: email) {
+            errors.append("Ugyldig epost")
+            isValid = false
+        }
+
+        if !validatePassword(password: password1) {
+            errors.append("Første passord ugyldig: Må være mellom 8 og 24 tegn")
+            isValid = false
+            bothPasswordsValid = false
+        }
+
+        if !validatePassword(password: password2) {
+            errors.append("Andre passord ugyldig: Må være mellom 8 og 24 tegn")
+            isValid = false
+            bothPasswordsValid = false
+        }
+
+        if bothPasswordsValid {
+            if !validateEqualPasswords(password1: password1!, password2: password2!) {
+                errors.append("Passordene må være like")
+                isValid = false
+            }
+        }
+
+
+        //passord1 og 2 må matche min 8, max 24
+        validationAlert.setDescripion(errors: errors)
+        return isValid
+    }
+
+    /// name must not be nil, min two words
+    private func validateName(name: String?) -> Bool {
+        guard let name = name else { return false }
+        return name.split(separator: " ").count > 1
+    }
+
+    /// email can´t be nil and not valid
+    private func validateEmail(email: String?) -> Bool {
+        guard let email = email else { return false }
+        let emailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailFormat)
+        return emailPredicate.evaluate(with: email)
+    }
+
+    ///password is min 8 and max 24
+    private func validatePassword(password: String?) -> Bool {
+        guard let password = password else { return false }
+        return 8 ... 24 ~= password.count
+    }
+
+    ///passwords must be equal
+    private func validateEqualPasswords(password1: String, password2: String) -> Bool {
+        return password1 == password2
     }
     
     //get image from source type
@@ -175,15 +234,22 @@ extension UserRegistrationViewController: UITableViewDelegate, UITableViewDataSo
         case 0:
             cell.informationLabel.text = "Navn:"
             cell.userInput.placeholder = "Kari Nordmann"
+            cell.userInput.autocapitalizationType = .words
         case 1:
             cell.informationLabel.text = "E-post:"
             cell.userInput.placeholder = "kari@nordmann.no"
+            cell.userInput.keyboardType = .emailAddress
+            cell.userInput.autocapitalizationType = .none
         case 2:
             cell.informationLabel.text = "Passord:"
             cell.userInput.placeholder = "••••••••"
+            cell.userInput.isSecureTextEntry = true
+            cell.userInput.autocapitalizationType = .none
         case 3:
             cell.informationLabel.text = "Passord:"
             cell.userInput.placeholder = "••••••••"
+            cell.userInput.isSecureTextEntry = true
+            cell.userInput.autocapitalizationType = .none
         default:
             print("fant ikke celle")
         }
@@ -279,5 +345,66 @@ fileprivate class FooterView: UIView {
     
     @objc func pickImageTapped() {
         imageTapped()
+    }
+}
+
+fileprivate class ValidationAlert: UIView {
+
+    var titleLabel: UILabel!
+    var descriptionTextView: UITextView!
+
+    init(frame: CGRect, description: String? = nil) {
+        super.init(frame: frame)
+
+        setupViews()
+        setupConstrains()
+        bindStyles()
+        titleLabel.text = "Noe gikk galt"
+        descriptionTextView.text = description
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    private func setupViews() {
+        titleLabel = UILabel.init(frame: .zero)
+        descriptionTextView = UITextView.init(frame: .zero)
+        descriptionTextView.isEditable = false
+        descriptionTextView.isSelectable = false
+
+        addSubview(titleLabel)
+        addSubview(descriptionTextView)
+    }
+
+    private func setupConstrains() {
+        constrain(self, titleLabel, descriptionTextView) { view, titleLabel, descriptionTextView in
+            let padding: CGFloat = 16
+            titleLabel.left == view.left + padding
+            titleLabel.right == view.right - padding
+            titleLabel.top == view.top + padding
+
+            descriptionTextView.top == titleLabel.bottom
+            descriptionTextView.left == view.left + padding
+            descriptionTextView.right == view.right - padding
+            descriptionTextView.bottom == view.bottom - padding
+        }
+    }
+
+    private func bindStyles() {
+        backgroundColor = Colors.alertColor
+
+        titleLabel.textAlignment = .center
+        titleLabel.textColor = .white
+        descriptionTextView.textColor = .white
+        descriptionTextView.backgroundColor = .clear
+    }
+
+    func setDescripion(errors: [String]) {
+        let description = errors.map { "• \($0)\n" }
+            .reduce ("", { prev, next in
+                prev + next
+            })
+        descriptionTextView.text = description
     }
 }

@@ -11,8 +11,7 @@ import Cartography
 
 class RegistrationCell: UITableViewCell, UITextFieldDelegate {
     
-    static let reusableIdentifier = String.init(
-        describing: RegistrationCell.self)
+    static let reusableIdentifier = String.init(describing: RegistrationCell.self)
     var userInput: UITextField!
     var informationLabel: UILabel!
     
@@ -37,19 +36,22 @@ class RegistrationCell: UITableViewCell, UITextFieldDelegate {
     
     private func setupConstraints(){
         constrain(self, informationLabel, userInput){cell, informationLabel, userInput in
+            let padding: CGFloat = 16
+
             informationLabel.top == cell.top
-            informationLabel.left == cell.left + 16
+            informationLabel.left == cell.left + padding
             informationLabel.bottom == cell.bottom
             
             userInput.top == cell.top
-            userInput.left == informationLabel.right + 16
-            userInput.right == cell.right - 16
+            userInput.left == informationLabel.right + padding
+            userInput.right == cell.right - padding
             userInput.bottom == cell.bottom
         }
     }
     
     private func bindStyles(){
         userInput.textAlignment = .right
+        userInput.autocorrectionType = .no
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -11,8 +11,7 @@ import Cartography
 
 class UserDateRegistrationCell: UITableViewCell{
     
-    static let reusableIdentifier = String.init(
-        describing: UserDateRegistrationCell.self)
+    static let reusableIdentifier = String.init(describing: UserDateRegistrationCell.self)
     var informationLabel: UILabel!
     var dateLabel: UILabel!
     var datePicker: UIDatePicker!
@@ -24,6 +23,10 @@ class UserDateRegistrationCell: UITableViewCell{
         setupConstraints()
         bindStyles()
     }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     private func setupViews(){
         informationLabel = UILabel.init(frame: .zero)
@@ -34,14 +37,10 @@ class UserDateRegistrationCell: UITableViewCell{
         addSubview(datePicker)
         addSubview(dateLabel)
         
-        let marlenDate = "26.03.1998"
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM.yyyy"
-        let initialDate = dateFormatter.date(from: marlenDate)
-        
-        datePicker.date = initialDate!
+        let defaultDate = "26.03.1998"
+        datePicker.date = createDateFrom(format: defaultDate)
         datePicker.addTarget(self, action: #selector(datePickerChanged(picker:)), for: .valueChanged)
-        dateLabel.text = marlenDate
+        dateLabel.text = defaultDate
     }
     
     private func setupConstraints(){
@@ -64,14 +63,20 @@ class UserDateRegistrationCell: UITableViewCell{
     private func bindStyles(){
         datePicker.backgroundColor = .white
         datePicker.datePickerMode = .date
-        
+
+        datePicker.minimumDate = createDateFrom(format: "01.01.1800")
+
+        datePicker.maximumDate = Date.init()        
         dateLabel.textAlignment = .right
     }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+
+    /// If date is nil or gives an error, todays date is given
+    private func createDateFrom(format: String) -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        return dateFormatter.date(from: format) ?? Date.init()
     }
-    
+
     @objc func datePickerChanged(picker: UIDatePicker) {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy"

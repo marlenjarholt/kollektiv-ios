@@ -7,59 +7,59 @@
 //
 
 import UIKit
+import Cartography
 
 class OnboardingViewController: UIViewController{
     
     var registerButton: UIButton!
     var logInButton: UIButton!
-    var buttonBox: UIView!
     let buttonHeigth: CGFloat = 68
-    let buttonWidth: CGFloat = 238
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
+        setupConstrains()
         bindStyles()
     }
     
     private func setupViews(){
-        let buttonMargin: CGFloat = 40
-        let horizontalCenter = UIScreen.main.bounds.width / 2
-        let verticalCenter = UIScreen.main.bounds.height / 2
-        let buttonBoxHeight = buttonHeigth * 2 + buttonMargin
-        
-        buttonBox = UIView.init(
-            frame: CGRect.init(
-                x: horizontalCenter - buttonWidth / 2,
-                y: verticalCenter - buttonBoxHeight / 2,
-                width: buttonWidth,
-                height: buttonBoxHeight))
-        
-        registerButton = makeButton(name: "Registrer", y: 0)
-        logInButton = makeButton(name: "Logg inn", y: buttonHeigth + buttonMargin)
+        registerButton = makeButton(name: "Registrer")
+        logInButton = makeButton(name: "Logg inn")
         
         registerButton.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(registerButtonTapped)))
         
-        buttonBox.addSubview(registerButton)
-        buttonBox.addSubview(logInButton)
-        
-        view.addSubview(buttonBox)
+        view.addSubview(registerButton)
+        view.addSubview(logInButton)
+    }
+
+    private func setupConstrains() {
+        constrain(view, registerButton, logInButton) { view, registerButton, logInButton in
+            let buttonMargin: CGFloat = 20
+            let buttonWidth: CGFloat = 238
+
+            registerButton.bottom == view.centerY - buttonMargin
+            registerButton.centerX == view.centerX
+            registerButton.width == buttonWidth
+            registerButton.height == buttonHeigth
+
+            logInButton.top == view.centerY + buttonMargin
+            logInButton.centerX == view.centerX
+            logInButton.width == buttonWidth
+            logInButton.height == buttonHeigth
+        }
     }
     
     private func bindStyles(){
         view.backgroundColor = .white
     }
     
-    private func makeButton(name: String, y: CGFloat) -> UIButton{
-        
-        let button = UIButton.init(
-            frame: CGRect.init(x: 0, y: y, width: buttonWidth, height: buttonHeigth))
+    private func makeButton(name: String) -> UIButton {
+        let button = UIButton.init(frame: .zero)
         button.setTitle(name, for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = Colors.mainColor
-        button.layer.cornerRadius = buttonHeigth/2
+        button.layer.cornerRadius = buttonHeigth / 2
         
         return button
     }
@@ -70,8 +70,5 @@ class OnboardingViewController: UIViewController{
         navigationItem.backBarButtonItem = backItem
         backItem.tintColor = .black
         navigationController?.pushViewController(UserRegistrationViewController.init(), animated: true)
-        
     }
-    
 }
-
